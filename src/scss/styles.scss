@@ -1,0 +1,680 @@
+/**
+* @license
+* MyFonts Webfont Build ID 3092585, 2015-09-16T12:48:51-0400
+*
+* The fonts listed in this notice are subject to the End User License
+* Agreement(s) entered into by the website owner. All other parties are
+* explicitly restricted from using the Licensed Webfonts(s).
+*
+* You may obtain a valid license at the URLs below.
+*
+* Webfont: FuturaBT-Light by Bitstream
+* URL: http://www.myfonts.com/fonts/bitstream/futura/light/
+*
+* Webfont: FuturaBT-Book by Bitstream
+* URL: http://www.myfonts.com/fonts/bitstream/futura/book/
+*
+* Webfont: FuturaBT-Bold by Bitstream
+* URL: http://www.myfonts.com/fonts/bitstream/futura/bold/
+*
+*
+* License: http://www.myfonts.com/viewlicense?type=web&buildid=3092585
+* Licensed pageviews: 10,000
+* Webfonts copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+*
+* © 2015 MyFonts Inc
+*/
+@media all and (min-width: 1024px) {
+#mobile {
+ display: none;
+}
+body {
+background-color: #ffffff;
+color: #000000;
+margin: 2.5%;
+font: 15px FuturaBT-Light, Arial, sans-serif;
+}
+
+a.mlynkz1:link {color: #000000; text-decoration: none;}
+a.mlynkz1:visited {color: #000000; text-decoration: none;}
+a.mlynkz1:hover {color: #000000; text-decoration: bold;}
+
+a.blynkz:link {color: #000000; text-decoration: underline;}
+a.blynkz:visited {color: #000000; text-decoration: underline;}
+a.blynkz:hover {color: #000000; text-decoration: underline;}
+
+a.blynkz2:link {color: #B7A38B; text-decoration: underline;}
+a.blynkz2:visited {color: #B7A38B; text-decoration: underline;}
+a.blynkz2:hover {color: #B7A38B; text-decoration: underline;}
+
+a.plynkz:link {color: #ffffff; text-decoration: none;}
+a.plynkz:visited {color: #ffffff; text-decoration: none;}
+a.plynkz:hover {color: #ffffff; text-decoration: underline;}
+
+p {
+ line-height: 175%;
+ margin-bottom: 2.5em;
+}
+
+.ralign {text-align: right;}
+.calign {text-align: center;}
+.lalign {text-align: left;}
+.jalign {text-align: justify;}
+.talign {text-align: left;}
+
+#headermenudesktop {
+display: table;
+width: 100%;
+background-color: #B3BF80;
+margin-top: 35px;
+/* height: 160px; */
+}
+
+#logo {
+display: table-cell;
+background-color: #B3BF80;
+padding-left: 30px;
+padding-top: 30px;
+padding-bottom: 10px;
+float: left;
+}
+#rightside {
+display: block;
+float: right;
+padding-top: 30px;
+padding-right: 30px;
+}
+
+#fb {
+display: block;
+float: right;
+vertical-align: middle;
+}
+#fbimg {
+width: 80%;
+height: auto;
+}
+
+#contact {
+display: table-cell;
+text-align: right;
+background-color: #B3BF80;
+color: #000000;
+vertical-align: middle;
+padding-right: 10px;
+margin-right: 30px;
+float: right;
+}
+#services {
+background-color: #B7A38B;
+color: #000000;
+width: calc(100% - 35px);
+padding-top: 10px;
+padding-bottom: 6px;
+padding-left: 35px;
+margin-top: -6px;
+line-height: 100%;
+font: 100% FuturaBT-Book, Arial, sans-serif;
+}
+
+span.phone {
+font: 150% FuturaBT-Book, Arial, sans-serif;
+color: #ffffff;
+}
+
+img.chiefimage {
+		width: calc(100%);
+		height: auto;
+}
+
+
+ul.profesh {
+list-style-image: url("images/dragonfly3.png");
+}
+
+
+#suzi {
+float: left;
+margin-left: 15%;
+margin-right: 3%;
+}
+#profesh li {
+margin-bottom: 0.5em;
+padding-right: 7%;
+}
+.para {
+padding: 0 15%;
+
+}
+span.title {
+color: #B7A38B;
+font: 100% FuturaBT-Bold, Arial, sans-serif;
+}
+span.notyet {
+ color: #5E5E5E;
+}
+
+#cssmenu,
+#cssmenu ul,
+#cssmenu li,
+#cssmenu a {
+line-height: 1;
+margin: 0;
+padding: 0;
+}
+#cssmenu {
+height: 37px;
+display: inline-block;
+border: none;
+background-color: #B3BF80;
+margin-top: 12px;
+padding: 0;
+z-index: 999;
+}
+#cssmenu > ul {
+list-style: inside none;
+margin: 0;
+padding: 0;
+}
+#cssmenu > ul > li {
+list-style: inside none;
+float: left;
+display: inline-block;
+position: relative;
+z-index: 99;
+margin: 0;
+padding: 0;
+}
+#cssmenu.align-center > ul {
+text-align: center;
+}
+#cssmenu.align-center > ul > li {
+float: none;
+margin-left: -3px;
+}
+#cssmenu.align-center ul ul {
+text-align: left;
+}
+#cssmenu.align-center > ul > li:first-child > a {
+border-radius: 5px;
+}
+#cssmenu > ul > li > a {
+outline: 1px;
+display: block;
+position: relative;
+text-align: center;
+font: 14px FuturaBT-Book, Arial, sans-serif;
+background-color: #B3BF80;
+color: #000000;
+padding: 12px 25px;
+}
+
+#cssmenu > ul > li > a:after {
+content: "";
+position: absolute;
+top: -1px;
+bottom: -1px;
+right: -2px;
+z-index: 99;
+border: none;
+}
+#cssmenu ul li.has-sub:hover > a:after {
+top: 0;
+bottom: 0;
+}
+#cssmenu > ul > li.has-sub > a:before {
+content: "";
+position: absolute;
+top: 18px;
+right: 6px;
+border: 5px solid transparent;
+border-top: 5px solid #000000;
+}
+
+#cssmenu > ul > li.has-sub:hover > a:before {
+top: 19px;
+}
+#cssmenu > ul > li.has-sub:hover > a {
+
+z-index: 999;
+}
+#cssmenu ul li.has-sub:hover > ul,
+#cssmenu ul li.has-sub:hover > div {
+display: block;
+border: none;
+}
+#cssmenu > ul > li.has-sub > a:hover,
+#cssmenu > ul > li.has-sub:hover > a {
+background-color: #B7A38B;
+color: #000000;
+border: none;
+}
+
+#cssmenu > ul > li.no-sub > a:hover,
+#cssmenu > ul > li.no-sub:hover > a {
+background-color: #B7A38B;
+color: #000000;
+border: none;
+}
+
+#cssmenu ul li > ul,
+#cssmenu ul li > div {
+display: none;
+width: auto;
+position: absolute;
+top: 36px;
+background-color: #B3BF80;
+color: #000000;
+z-index: 999;
+padding: 10px 0;
+border: none;
+text-align: left;
+}
+#cssmenu ul li > ul {
+width: 200px;
+}
+#cssmenu ul ul ul {
+position: absolute;
+}
+#cssmenu ul ul li:hover > ul {
+left: 100%;
+top: -10px;
+border-radius: 5px;
+}
+
+#cssmenu ul li > ul li {
+display: block;
+list-style: inside none;
+position: relative;
+margin: 0;
+padding: 0;
+}
+#cssmenu ul li > ul li a {
+outline: none;
+display: block;
+position: relative;
+font: 14px FuturaBT-Book, Arial, sans-serif;
+color: #000000;
+margin: 0;
+padding: 8px 20px;
+}
+#cssmenu ul li > ul li a:hover {
+background-color: #B7A38B;
+}
+.formwidth {
+width: 500px;
+margin: 0px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 5px 10px;
+font-family: FuturaBT-Book;
+font-size: 16px;
+border-radius: 5px;
+border: 2px solid;
+border-color: #B7A38B;
+background-color: #DED4CA;
+}
+.button {
+width: 150px;
+font-family: FuturaBT-Book;
+background-color: #B3BF80;
+color: #000000;
+vertical-align: bottom;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+}
+input:focus, textarea:focus {
+background-color: #DDE2C5;
+border-radius: 5px;
+border: 2px solid;
+border-color: #B3BF80
+}
+input {
+height: 25px;
+vertical-align: bottom;
+}
+textarea {
+ display : block;
+ padding : 10px;
+ margin  : 10px 0 0 -10px;
+ height  : 400px;
+ resize  : none;
+ overflow: auto;
+}
+#wholeform {
+ width: 500px;
+ margin: 0px auto;
+ text-align: center;
+}
+#buttons {
+ margin: 0px auto;
+ text-align: center;
+}
+}
+
+@media all and (max-width: 1024px) {
+
+#desktop {
+	display: none;
+}
+#mobile {
+	width: 95%;
+	padding: 2.5%;
+}
+
+body {
+background-color: #ffffff;
+color: #000000;
+margin: 2.5%;
+font: .75em FuturaBT-Light, Arial, sans-serif;
+/* overflow-x: hidden; */
+}
+
+a.mlynkz1:link {color: #000000; text-decoration: none;}
+a.mlynkz1:visited {color: #000000; text-decoration: none;}
+a.mlynkz1:hover {color: #000000; text-decoration: bold;}
+
+a.blynkz:link {color: #000000; text-decoration: underline;}
+a.blynkz:visited {color: #000000; text-decoration: underline;}
+a.blynkz:hover {color: #000000; text-decoration: underline;}
+
+a.blynkz2:link {color: #B7A38B; text-decoration: underline;}
+a.blynkz2:visited {color: #B7A38B; text-decoration: underline;}
+a.blynkz2:hover {color: #B7A38B; text-decoration: underline;}
+
+a.plynkz:link {
+color: #ffffff;
+font: 2em FuturaBT-Book, Arial, sans-serif;
+text-decoration: none;
+}
+a.plynkz:visited {
+color: #ffffff;
+font: 2em FuturaBT-Book, Arial, sans-serif;
+text-decoration: none;
+}
+a.plynkz:hover {
+color: #ffffff;
+font: 2em FuturaBT-Book, Arial, sans-serif;
+text-decoration: underline;
+}
+
+
+
+
+
+p {
+ line-height: 175%;
+ margin-bottom: 2.5em;
+}
+
+.ralign {text-align: right;}
+.calign {text-align: center;}
+.lalign {text-align: left;}
+.jalign {text-align: justify;}
+.talign {text-align: center;}
+
+@import "compass/css3";
+
+/* Advanced Checkbox Hack */
+body { -webkit-animation: bugfix infinite 1s; }
+@-webkit-keyframes bugfix { from {padding:0;} to {padding:0;} }
+
+input[type=checkbox] {
+position: absolute;
+top: -9999px;
+left: -9999px;
+}
+
+input:not(:checked) ~ nav[role="off-canvas"] {
+display: none;
+}
+
+label {
+position: absolute;
+left:0;
+display: none;
+width:2em;
+height:2.25em;
+padding:.35em;
+font-size:1.1em;
+color:#fff;
+transition:color .3s ease-in-out;
+cursor: pointer;
+user-select:none;
+margin-left:5%; /* controls horizontal placement  */
+margin-top: 10px;
+margin-bottom:0;
+margin-right:5%;
+background:rgba(0, 0, 0, 0);
+z-index: 10;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+width: .95em;
+}
+
+::-webkit-scrollbar-track {
+background-color: rgba(217, 217, 217, .5);
+}
+
+::-webkit-scrollbar-thumb {
+background: rgba(184, 184, 184, .5);
+box-shadow:
+inset .05em .05em 0 rgba(0, 0, 0, 0),
+inset 0 -.05em 0 rgba(0, 0, 0, 0)
+;
+}
+
+/* label {
+position: absolute;
+left: 0;
+display: none;
+} */
+$menu_width: 20em;
+$content_offset : .5em;
+.content {
+margin:2.5em .5em 0 .5em;
+}
+
+ul.nav {
+list-style-type: none;
+line-height: 200%;
+}
+
+nav[role="off-canvas"] {
+position: absolute;
+top: 5em;
+left: -$menu_width;
+width: $menu_width;
+opacity: 0;
+
+
+ul > li {
+	width: 100%;
+	text-align: left;
+	margin:0;
+
+	&:hover {
+		box-shadow:inset 0 0 0 .15em rgba(255, 255, 255, .45);
+	}
+}
+}
+
+label {
+display: table-cell;
+}
+
+label:after {
+position: absolute;
+left: .5em;
+top: 2.5%;
+content: "\2261";
+font-size: 2em;
+color: #fff;
+
+}
+
+/* label:hover,
+input:checked ~ label {
+color:#000;
+
+} */
+
+input:checked ~ nav[role="off-canvas"] {
+left: 0;
+box-shadow: -28em 0 0 30em #B7A38B;
+background-color: #B7A38B;
+color: #000000;
+font-size: 150%;
+opacity: 3;
+
+
+ul > li {
+	padding: .55em .55em .55em 1.5em;
+
+	&:hover {
+		padding-left:3.5em;
+	}
+
+	&:after {
+		position:absolute;
+		right:.25em;
+		content:"\203A";
+		font: bold 1.4em sans-serif;
+		color:inherit;
+	 }
+}
+}
+
+input:checked ~ .content {
+margin-left: $menu_width + .5em;
+margin-right: -($menu_width + .5em);
+}
+
+#logo {
+padding: 5%;
+background-color: #B3BF80;
+}
+#logoimg {
+width: 100%;
+height: auto;
+}
+#headermenumobile {
+display: table-row;
+width: 100%;
+vertical-align: middle;
+background-color: #000000;
+height: 52px;
+}
+#fb {
+position: absolute;
+right: 5%;
+display: table-cell;
+float: right;
+vertical-align: top;
+margin-right: 10px;
+margin-top: 13px;
+}
+
+#contact {
+display: table-cell;
+text-align: center;
+color: #ffffff;
+padding-top: 15px;
+vertical-align: top;
+width: 1000px;
+}
+
+#services {
+background-color: #B7A38B;
+color: #000000;
+width: 95%;
+line-height: 100%;
+padding: 2.5%;
+font: 100% FuturaBT-Book, Arial, sans-serif;
+}
+
+img.chiefimage {
+		width: calc(100%);
+		height: auto;
+}
+
+ul.profesh {
+list-style-image: url("images/dragonfly3.png");
+}
+
+
+#suzi {
+text-align: center;
+margin-bottom: 12%;
+}
+#profesh li {
+margin-bottom: 0.5em;
+padding-right: 7%;
+}
+.para {
+padding: 0 10%;
+}
+
+span.title {
+color: #B7A38B;
+font: 100% FuturaBT-Bold, Arial, sans-serif;
+}
+span.notyet {
+ color: #5E5E5E;
+}
+.formwidth {
+width: 95%;
+margin: 2.5%;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 5px 10px;
+font-family: FuturaBT-Book;
+font-size: 1em;
+border-radius: 5px;
+border: 2px solid;
+border-color: #B7A38B;
+background-color: #DED4CA;
+}
+.button {
+width: 150px;
+font-family: FuturaBT-Book;
+background-color: #B3BF80;
+color: #000000;
+/* vertical-align: bottom; */
+padding: 5px;
+font-size: 1em;
+border: none;
+border-radius: 5px;
+}
+input:focus, textarea:focus {
+background-color: #DDE2C5;
+border-radius: 5px;
+border: 2px solid;
+border-color: #B3BF80
+}
+input {
+height: 25px;
+vertical-align: bottom;
+}
+textarea {
+ display : block;
+ padding : 10px;
+ margin  : 10px 0 0 -10px;
+ height  : 20em;
+ resize  : none;
+ overflow: auto;
+}
+#wholeform {
+ width: 95%;
+ margin: 0px auto;
+}
+#buttons {
+ margin: 0px auto;
+ text-align: center;
+}
+}

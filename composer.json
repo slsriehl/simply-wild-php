@@ -1,0 +1,5 @@
+{
+    "require": {
+        "zetacomponents/mail": "^1.8"
+    }
+}
