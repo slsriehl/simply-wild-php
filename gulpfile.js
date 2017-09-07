@@ -3,9 +3,10 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
-var rename = require("gulp-rename");
+var rename = require('gulp-rename');
+var concat = require('gulp-concat');
+var coffee = require('gulp-coffee');
 var uglify = require('gulp-uglify');
-var pkg = require('./package.json');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -32,7 +33,7 @@ var banner = ['/*!\n',
 
 // Compile scss files from /scss into /css
 gulp.task('compile-concat-scss', function() {
-	return gulp.src('./src/scss/*/*.scss')
+	return gulp.src('./src/scss/*.scss')
 		.pipe(sass())
 		.pipe(header(banner))
 		.pipe(concat('styles.css'))
@@ -40,7 +41,7 @@ gulp.task('compile-concat-scss', function() {
 });
 
 gulp.task('minify-css', function() {
-	return gulp.src('./src/css/*')
+	return gulp.src('./src/css/*.css')
 	.pipe(cleanCSS({ compatibility: 'ie8'}))
 	.pipe(rename({ suffix: '.min'}))
 	.pipe(gulp.dest('./public/css'))
@@ -48,7 +49,7 @@ gulp.task('minify-css', function() {
 
 // compile and minify coffeescript files
 gulp.task('compile-concat-coffee', function() {
-	return gulp.src('./src/coffee/*/*.coffee')
+	return gulp.src('./src/coffee/*.coffee')
 		.pipe(coffee({bare: true}))
 		.pipe(header(banner))
 		.pipe(concat('index.js'))
@@ -57,25 +58,25 @@ gulp.task('compile-concat-coffee', function() {
 
 //minify js
 gulp.task('minify-js', function() {
-	return gulp.src('./src/js')
+	return gulp.src('./src/js/*.js')
 		.pipe(uglify())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('./public/js'))
 });
 
 // dev task to compile and reload in development
-gulp.task('dev', ['browserSync', 'compile-concat-scss', 'compile-concat-coffee'], function() {
-		gulp.watch('./src/scss/*/*.scss', ['compile-concat-scss']);
-		gulp.watch('./src/coffee/*/*.coffee', ['compile-concat-coffee']);
+gulp.task('dev', ['compile-concat-scss', 'compile-concat-coffee'], function() {
+		gulp.watch('./src/scss/*.scss', ['compile-concat-scss']);
+		gulp.watch('./src/coffee/*.coffee', ['compile-concat-coffee']);
 		// Reloads the browser whenever PHP, CSS, or JS files change
 		gulp.watch('./php/*.php', browserSync.reload);
 		gulp.watch('index.php', browserSync.reload);
-		gulp.watch('./src/css', browserSync.reload);
-		gulp.watch('./src/js', browserSync.reload);
+		gulp.watch('./src/css/*.css', browserSync.reload);
+		gulp.watch('./src/js/*.js', browserSync.reload);
 });
 
 //production task to compile, minify, and reload
-gulp.task('prod', ['browserSync', 'compile-concat-scss', 'compile-concat-coffee', 'minify-js', 'minify-css'], function() {
+gulp.task('prod', ['compile-concat-scss', 'compile-concat-coffee', 'minify-js', 'minify-css'], function() {
 		gulp.watch('./src/scss/*/*.scss', ['compile-concat-scss', 'minify-css']);
 		gulp.watch('./src/coffee/*/*.coffee', ['compile-concat-coffee', 'minify-js']);
 		// Reloads the browser whenever PHP, CSS, or JS files change
