@@ -2,3 +2,4 @@
 vendor
 src/img
 public/webfonts
+node_modules
