@@ -10,8 +10,16 @@
 	@include flex-column;
 	@include center-center;
 	padding: 0.75rem;
+	font-size: $body-font-smaller;
+	span {
+		position: relative;
+		top: 3px;
+	}
 	.header__services--bullet {
 		display: none;
+	}
+	@media screen and (min-width: 474px) {
+		font-size: unset;
 	}
 	@media screen and (min-width: 1043px) {
 		@include flex-row;
@@ -66,10 +74,10 @@
 		padding: unset;
 	}
 	@media screen and (max-width: 1023px) and (min-width: 812px) {
-	  height: (2.75 * $body-font-size) + ($logo-height * 0.75);
+	  height: (2.75 * $body-font-size) + ((($logo-height / 100%) * $logo-width) * 0.75);
 	}
 	@media screen and (min-width: 1024px) {
-	  height: (2.75 * $body-font-size) + $logo-height;
+	  height: (2.75 * $body-font-size) + (($logo-height / 100%) * $logo-width);
 	}
 }
 
