@@ -1,45 +1,37 @@
 /* handle logo img as a background */
 .logo--img {
   width: $logo-width;
-  height: $logo-height;
-  padding-left: $logo-width; /*width of the image*/
-	
+  padding-top: $logo-height; /*image aspect ratio*/
+
 	margin: 1rem;
 	background: url('/public/img/SW4.png') left top no-repeat;
-	background-size: 100%;
+	background-size: 100% 100%;
 
 	@media screen and (max-width: 1023px) and (min-width: 812px) {
 		width: $logo-width * 0.75;
-	  height: $logo-height * 0.75;
-		padding-left: $logo-width * 0.75; /*width of the image*/
 	}
 	@media screen and (max-width: 811px) and (min-width: 628px) {
 		width: $logo-width * 2;
-	  height: $logo-height * 2;
-		padding-left: $logo-width * 2; /*width of the image*/
 	}
 
 	@media screen and (max-width: 627px) and (min-width: 428px) {
 		width: $logo-width * 1.333;
-	  height: $logo-height * 1.333;
-		padding-left: $logo-width * 1.333; /*width of the image*/
 	}
 }
 
 //section header images
 .section--img {
 	width: 100%;
-	height: auto;
-	padding-left: 100%;
-	background-size: 100% 100%;
+	padding-top: $section-img-height;
 }
 #about--img {
+	padding-top: $about-img-height;
 	background: url('/public/img/jumbo/catfountain.jpg') left top no-repeat;
+	background-size: 100% 100%;
 }
 #suzi--img {
 	width: 200px;
-	height: 200px;
-	padding-left: 200px;
+	padding-top: 200px;
 	background: url('/public/img/suzi.jpg') left top no-repeat;
 	background-size: 100% 100%;
 }
