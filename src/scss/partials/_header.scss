@@ -1,0 +1,131 @@
+//blocks/elements
+.header {
+	@include flex-column;
+	background-color: $green;
+
+	.header__logo {
+		@include flex-row;
+		@include center-center;
+		//flex-grow: 1;
+	}
+
+	@media screen and (min-width: 812px) {
+		@include flex-row;
+		@include between-center;
+		.header__logo {
+			margin: 1rem;
+			order: -1;
+		}
+	}
+}
+
+.header__menu {
+	background-color: $dark;
+	width: 100%;
+	@include flex-row;
+	@include between-center;
+	padding: 1rem 1.5rem;
+
+	@media screen and (min-width: 812px) {
+		background-color: unset;
+		@include flex-column;
+		@include between-end;
+		width: unset;
+		margin: 1.5rem 1rem 0 1rem;
+		padding: unset;
+	}
+	@media screen and (max-width: 1023px) and (min-width: 812px) {
+	  height: (2.75 * $body-font-size) + ($logo-height * 0.75);
+	}
+	@media screen and (min-width: 1024px) {
+	  height: (2.75 * $body-font-size) + $logo-height;
+	}
+}
+
+.header__menu__hmm {
+	display: none;
+	.menu--item {
+		padding: 0.75rem 0.5rem 0.75rem 0.5rem;
+		a, a:hover, a:visited, a:active {
+			span {
+				// position: relative;
+				// top: 3px;
+				line-height: 1;
+				color: $dark;
+				@media screen and (max-width: 871px) and (min-width: 812px) {
+				  font-size: $body-font-size * 0.85;
+				}
+			}
+			text-decoration: none;
+
+			width: 100%;
+
+		}
+	}
+	@media screen and (min-width: 812px) {
+		list-style-type: none;
+		display: block;
+		// @include flex-row;
+		// @include between-center;
+		// flex-grow: 2;
+		.menu--item {
+			// a:active {
+			// 	font-family: unset;
+			// }
+			display: inline-block;
+		}
+		.menu--item:hover {
+			background-color: $taupe;
+		}
+	}
+	// @media screen and (min-width: 812px) and (max-width: 1023px) {
+	// 	flex-grow: 3;
+	// }
+}
+.header__menu__hmm--toggle {
+	@include flex-column;
+	align-items: flex-start;
+	z-index: 50;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: $taupe;
+	color: $dark;
+}
+
+.header__menu__contact {
+	width: 100%;
+	@include flex-row;
+	@include between-center;
+	.menu--phone {
+		position: relative;
+		top: 3px;
+	}
+	@media screen and (min-width: 812px) {
+		//padding: 0.5rem 0.5rem 0 0;
+		@include end-center;
+		.menu--icon {
+			margin-left: 2rem;
+		}
+	}
+}
+
+
+@media screen and (min-width: 812px) {
+	#header__menu__toggle {
+		display: none;
+	}
+}
+
+
+
+
+
+
+//modifiers
+.menu--icon, .menu--phone {
+	color: $light;
+	font-size: $contact-font-size;
+	line-height: 1;
+	text-decoration: none;
+}

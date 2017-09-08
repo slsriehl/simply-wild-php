@@ -1,0 +1,30 @@
+/* handle logo img as a background */
+.logo--img {
+  width: $logo-width;
+  height: $logo-height;
+
+  padding-left: $logo-width; /*width of the image*/
+	margin: 1rem;
+	background: url('/public/img/SW4.png') left top no-repeat;
+	background-size: $logo-width $logo-height;
+
+	@media screen and (max-width: 1023px) and (min-width: 812px) {
+		width: $logo-width * 0.75;
+	  height: $logo-height * 0.75;
+		padding-left: $logo-width * 0.75; /*width of the image*/
+		background-size: ($logo-width * 0.75) ($logo-height * 0.75);
+	}
+	@media screen and (max-width: 811px) and (min-width: 628px) {
+		width: $logo-width * 2;
+	  height: $logo-height * 2;
+		padding-left: $logo-width * 2; /*width of the image*/
+		background-size: ($logo-width * 2) ($logo-height * 2);
+	}
+
+	@media screen and (max-width: 627px) and (min-width: 428px) {
+		width: $logo-width * 1.333;
+	  height: $logo-height * 1.333;
+		padding-left: $logo-width * 1.333; /*width of the image*/
+		background-size: ($logo-width * 1.333) ($logo-height * 1.333);
+	}
+}
