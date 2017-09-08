@@ -2490,19 +2490,50 @@ body {
 .header {
   display: flex;
   flex-direction: column;
-  background-color: #b3bf80; }
-  .header .header__logo {
+  width: 100%;
+  background-color: unset; }
+
+.header__services {
+  background-color: #b7a38b;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem; }
+  .header__services .header__services--bullet {
+    display: none; }
+  @media screen and (min-width: 1043px) {
+    .header__services {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start; }
+      .header__services span {
+        line-height: 1;
+        display: block; }
+      .header__services .header__services--bullet {
+        display: block; } }
+  @media screen and (min-width: 1044px) and (max-width: 1211px) {
+    .header__services {
+      font-size: 17px; } }
+
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #b3bf80;
+  width: 100%; }
+  .header__nav .header__logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center; }
   @media screen and (min-width: 812px) {
-    .header {
+    .header__nav {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center; }
-      .header .header__logo {
+      .header__nav .header__logo {
         margin: 1rem;
         order: -1; } }
 

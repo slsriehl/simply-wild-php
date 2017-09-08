@@ -1,7 +1,39 @@
 //blocks/elements
 .header {
 	@include flex-column;
+	width: 100%;
+	background-color: unset;
+}
+
+.header__services {
+	background-color: $taupe;
+	width: 100%;
+	@include flex-column;
+	@include center-center;
+	padding: 0.75rem;
+	.header__services--bullet {
+		display: none;
+	}
+	@media screen and (min-width: 1043px) {
+		@include flex-row;
+		justify-content: flex-start;
+		span {
+			line-height: 1;
+			display: block;
+		}
+		.header__services--bullet {
+			display: block;
+		}
+	}
+	@media screen and (min-width: 1044px) and (max-width: 1211px) {
+		font-size: $body-font-smaller;
+	}
+}
+
+.header__nav {
+	@include flex-column;
 	background-color: $green;
+	width: 100%;
 
 	.header__logo {
 		@include flex-row;
@@ -53,7 +85,7 @@
 				line-height: 1;
 				color: $dark;
 				@media screen and (max-width: 871px) and (min-width: 812px) {
-				  font-size: $body-font-size * 0.85;
+				  font-size: $body-font-smaller;
 				}
 			}
 			text-decoration: none;
