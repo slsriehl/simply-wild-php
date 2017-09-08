@@ -1,6 +1,5 @@
 //blocks/elements
 .header {
-	@include flex-column;
 	width: 100%;
 	background-color: unset;
 }
@@ -34,7 +33,7 @@
 	@include flex-column;
 	background-color: $green;
 	width: 100%;
-
+	//height: fit-content;
 	.header__logo {
 		@include flex-row;
 		@include center-center;
