@@ -1,5 +1,5 @@
 .section {
-	@include flex-column;
+	//@include flex-column;
 	width: 100%;
 }
 
@@ -46,4 +46,13 @@
 .section__span--tagline {
 	font-family: $font-bold;
 	color: $taupe;
+}
+
+.section--bullets {
+	list-style-image: url("/public/img/dragonfly3.png");
+	margin-left: 3rem;
+	margin-bottom: 2rem;
+	li {
+		line-height: 2
+	}
 }
