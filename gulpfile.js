@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var php = require('gulp-connect-php');
 var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
@@ -30,6 +31,25 @@ var banner = ['/*!\n',
 		' * SOFTWARE.\n',
 		' */\n'
 ].join('');
+
+var reload  = browserSync.reload;
+
+gulp.task('php', function() {
+	php.server({
+		base: './',
+		port: 8010,
+		keepalive: true
+	});
+});
+
+gulp.task('browser-sync',['php'], function() {
+	browserSync.init({
+		proxy: '127.0.0.1:8010',
+		port: 8080,
+		open: true,
+		notify: false
+	});
+});
 
 // Compile scss files from /scss into /css
 gulp.task('compile-concat-scss', function() {
@@ -65,23 +85,25 @@ gulp.task('minify-js', function() {
 });
 
 // dev task to compile and reload in development
-gulp.task('dev', ['compile-concat-scss', 'compile-concat-coffee'], function() {
-		gulp.watch('./src/scss/*.scss', ['compile-concat-scss']);
+gulp.task('dev', ['browser-sync', 'compile-concat-scss', 'compile-concat-coffee'], function() {
+		gulp.watch('./src/scss/*/*.scss', ['compile-concat-scss']);
 		gulp.watch('./src/coffee/*.coffee', ['compile-concat-coffee']);
 		// Reloads the browser whenever PHP, CSS, or JS files change
-		gulp.watch('./php/*.php', browserSync.reload);
-		gulp.watch('index.php', browserSync.reload);
-		gulp.watch('./src/css/*.css', browserSync.reload);
-		gulp.watch('./src/js/*.js', browserSync.reload);
+		gulp.watch(['./*.php'], [reload]);
+		gulp.watch('./php/*.php', [reload]);
+		gulp.watch('index.php', [reload]);
+		gulp.watch('./src/css/*.css', [reload]);
+		gulp.watch('./src/js/*.js', [reload]);
 });
 
 //production task to compile, minify, and reload
-gulp.task('prod', ['compile-concat-scss', 'compile-concat-coffee', 'minify-js', 'minify-css'], function() {
+gulp.task('prod', ['browser-sync','compile-concat-scss', 'compile-concat-coffee', 'minify-js', 'minify-css'], function() {
 		gulp.watch('./src/scss/*/*.scss', ['compile-concat-scss', 'minify-css']);
 		gulp.watch('./src/coffee/*/*.coffee', ['compile-concat-coffee', 'minify-js']);
 		// Reloads the browser whenever PHP, CSS, or JS files change
-		gulp.watch('./php/*.php', browserSync.reload);
-		gulp.watch('index.php', browserSync.reload);
-		gulp.watch('./public/css', browserSync.reload);
-		gulp.watch('./public/js', browserSync.reload);
+		gulp.watch(['./*.php'], [reload]);
+		gulp.watch('./php/*.php', [reload]);
+		gulp.watch('index.php', [reload]);
+		gulp.watch('./src/css/*.css', [reload]);
+		gulp.watch('./src/js/*.js', [reload]);
 });
