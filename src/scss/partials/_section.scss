@@ -47,6 +47,13 @@
 	font-family: $font-bold;
 	color: $taupe;
 }
+a.section__span--tagline {
+	text-decoration: none;
+	&:hover, &:active {
+		text-decoration: underline;
+		color: $green;
+	}
+}
 
 .section--bullets {
 	list-style-image: url("/public/img/dragonfly3.png");
