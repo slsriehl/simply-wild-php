@@ -13,39 +13,28 @@
 			</div>
 			<ul class="header__menu__hmm">
 				<li class="hmm__list menu--item">
-					<a href="#about">
-						<span>
-							ABOUT
-						</span>
-					</a>
+					<span class="menu__link" data-link="about">
+						ABOUT
+					</span>
 				</li>
 				<li class="hmm__list menu--item">
-					<a href="#services">
-						<span>
-							SERVICES
-						</span>
-					</a>
+					<span class="menu__link" data-link="services">
+						SERVICES
+					</span>
+				<li class="hmm__list menu--item">
+					<span class="menu__link" data-link="garden">
+						GARDENS
+					</span>
 				</li>
 				<li class="hmm__list menu--item">
-					<a href="#gardens">
-						<span>
-							GARDENS
-						</span>
-					</a>
+					<span class="menu__link" data-link="comments">
+						COMMENTS
+					</span>
 				</li>
 				<li class="hmm__list menu--item">
-					<a href="#comments">
-						<span>
-							COMMENTS
-						</span>
-					</a>
-				</li>
-				<li class="hmm__list menu--item">
-					<a href="#contact">
-						<span>
-							CONTACT
-						</span>
-					</a>
+					<span class="menu__link" data-link="contact">
+						CONTACT
+					</span>
 				</li>
 			<!-- /.header__menu__menu -->
 			</ul>
