@@ -85,20 +85,14 @@
 	display: none;
 	.menu--item {
 		padding: 0.75rem 0.5rem 0.75rem 0.5rem;
-		a, a:hover, a:visited, a:active {
-			span {
-				// position: relative;
-				// top: 3px;
-				line-height: 1;
-				color: $dark;
-				@media screen and (max-width: 871px) and (min-width: 812px) {
-				  font-size: $body-font-smaller;
-				}
+		span {
+			// position: relative;
+			// top: 3px;
+			line-height: 1;
+			color: $dark;
+			@media screen and (max-width: 871px) and (min-width: 812px) {
+			  font-size: $body-font-smaller;
 			}
-			text-decoration: none;
-
-			width: 100%;
-
 		}
 	}
 	@media screen and (min-width: 812px) {
