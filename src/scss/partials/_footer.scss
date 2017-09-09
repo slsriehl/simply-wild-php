@@ -1,0 +1,24 @@
+.footer__container {
+	background-color: $dark;
+	width: 100%;
+	padding: 1rem 1.5rem;
+}
+
+.footer--span {
+	color: $light;
+	a {
+		font-family: $font-bold;
+		color: $light;
+		text-decoration: none;
+		&:hover, &:active {
+			text-decoration: underline;
+			color: $light;
+		}
+		&:visited {
+			color: $light;
+		}
+	}
+}
+// .footer--copy {
+// 	font-family: $font-bold;
+// }
