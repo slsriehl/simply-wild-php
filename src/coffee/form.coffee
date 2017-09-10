@@ -7,7 +7,7 @@ isValidValue = (element) ->
 	return (!['checkbox', 'radio'].includes(element.type) or element.checked)
 
 # convert the input in the form inputs into a json object
-formToJSON = (elements) ->
+formToJson = (elements) ->
 	[].reduce.call(elements, (data, element) ->
 		if isValidElement(element) and isValidValue(element)
 			data[element.name] = element.value
