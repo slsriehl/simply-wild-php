@@ -1,3 +1,5 @@
+<div id="menuOverlay">
+</div>
 <div class="header">
 	<div class="header__nav">
 		<div class="header__menu">
@@ -11,28 +13,28 @@
 				</a>
 			<!-- /.header__menu__contact -->
 			</div>
-			<ul class="header__menu__hmm">
-				<li class="hmm__list menu--item">
-					<span class="menu__link" data-link="about">
+			<ul class="header__menu__hmm" id="header__menu__hmm__id">
+				<li class="hmm__list menu--item" data-link="about">
+					<span class="menu__link">
 						ABOUT
 					</span>
 				</li>
-				<li class="hmm__list menu--item">
-					<span class="menu__link" data-link="services">
+				<li class="hmm__list menu--item" data-link="services">
+					<span class="menu__link">
 						SERVICES
 					</span>
-				<li class="hmm__list menu--item">
-					<span class="menu__link" data-link="garden">
+				<li class="hmm__list menu--item" data-link="gardens">
+					<span class="menu__link">
 						GARDENS
 					</span>
 				</li>
-				<li class="hmm__list menu--item">
-					<span class="menu__link" data-link="comments">
+				<li class="hmm__list menu--item" data-link="comments">
+					<span class="menu__link">
 						COMMENTS
 					</span>
 				</li>
-				<li class="hmm__list menu--item">
-					<span class="menu__link" data-link="contact">
+				<li class="hmm__list menu--item" data-link="contact">
+					<span class="menu__link">
 						CONTACT
 					</span>
 				</li>

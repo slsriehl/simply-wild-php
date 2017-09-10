@@ -45,6 +45,7 @@
 	.header__logo {
 		@include flex-row;
 		@include center-center;
+		margin: 1rem;
 		//flex-grow: 1;
 	}
 
@@ -52,7 +53,6 @@
 		@include flex-row;
 		@include between-center;
 		.header__logo {
-			margin: 1rem;
 			order: -1;
 		}
 	}
@@ -81,13 +81,43 @@
 	}
 }
 
+#menuOverlay {
+	position: fixed;
+	visibility: hidden;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	height: 100vh;
+	width: 100%;
+	background-color: rgba($dark, 0.7);
+	overflow: auto;
+	@media screen and (min-width: 812px) {
+		display: none;
+	}
+}
+
 .header__menu__hmm {
-	display: none;
+	position: fixed;
+	visibility: hidden;
+	left: 2rem;
+	top: 0;
+	height: 100vh;
+	width: fit-content;
+	overflow: scroll;
+	transition: max-height 0.4s ease 0s;
+	z-index: -1;
+	list-style-type: none;
+	background-color: $green;
+	padding: 1.75rem 0;
+	font-size: $contact-font-size;
 	.menu--item {
-		padding: 0.75rem 0.5rem 0.75rem 0.5rem;
+		padding: 0.75rem 2.5rem;
+		&:active {
+			background-color: $taupe;
+		}
 		span {
-			// position: relative;
-			// top: 3px;
+			position: relative;
+			top: 3px;
 			line-height: 1;
 			color: $dark;
 			@media screen and (max-width: 871px) and (min-width: 812px) {
@@ -96,8 +126,17 @@
 		}
 	}
 	@media screen and (min-width: 812px) {
-		list-style-type: none;
-		display: block;
+		position: relative;
+		left: unset;
+		//display: block;
+		overflow: unset;
+		height: unset;
+		//transition: unset;
+		width: unset;
+		z-index: 10;
+		padding: 0;
+		visibility: visible;
+		font-size: unset;
 		// @include flex-row;
 		// @include between-center;
 		// flex-grow: 2;
@@ -106,6 +145,11 @@
 			// 	font-family: unset;
 			// }
 			display: inline-block;
+			padding: 0.75rem 0.5rem;
+			span {
+				position: unset;
+				top: unset;
+			}
 		}
 		.menu--item:hover {
 			background-color: $taupe;
