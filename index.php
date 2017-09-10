@@ -27,6 +27,7 @@
 
 		</script>
 		-->
+		<script src='https://www.google.com/recaptcha/api.js'></script>
 	</head>
 	<body>
 		<?php
@@ -38,6 +39,6 @@
 			include './php/contact.php';
 			include './php/footer.php';
 		?>
-		<script type="text/javascript" src="/public/js/index.js"></script>
+		<script type="text/javascript" src="/src/js/index.js"></script>
 	</body>
 </html>
