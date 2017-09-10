@@ -1,10 +1,8 @@
 <div class="footer__container">
 <span class="footer--span">
-	<span class="footer--copy">
-		&copy;&nbsp;
-		<span id="footer--copyright"></span>
+	<span id="footerCopy">
+		&copy;
 	</span>
-	&nbsp;
 	<a href="https://studioriehl.com" target="_blank">
 		Studio Riehl
 	</a>

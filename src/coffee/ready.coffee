@@ -47,6 +47,19 @@ isReady document, () ->
 			else if element.classList.contains 'contact__input--filled'
 				element.classList.remove 'contact__input--filled'
 
+	#footer date
+	footerDate = () ->
+		thisDate = new Date().getFullYear()
+		console.log thisDate
+		if thisDate == 2017
+			return '2017&nbsp;'
+		else
+			return "2017-#{thisDate}&nbsp;"
+
+	footerCopyright = document.getElementById 'footerCopy'
+	theYear = document.createElement 'span'
+	theYear.innerHTML = footerDate()
+	footerCopyright.appendChild theYear
 	# enlargeWindowAnon = () ->
 	# 	enlargeWindow menu, overlay, toggle
 	#
