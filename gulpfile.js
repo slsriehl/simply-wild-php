@@ -70,9 +70,9 @@ gulp.task('minify-css', function() {
 // compile and minify coffeescript files
 gulp.task('compile-concat-coffee', function() {
 	return gulp.src('./src/coffee/*.coffee')
+		.pipe(concat('index.js'))
 		.pipe(coffee({bare: true}))
 		.pipe(header(banner))
-		.pipe(concat('index.js'))
 		.pipe(gulp.dest('./src/js'))
 });
 
