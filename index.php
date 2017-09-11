@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if lte IE 6]><html class="preIE7 preIE8 preIE9" lang="en"><![endif]-->
 <!--[if IE 7]><html class="preIE8 preIE9" lang="en"><![endif]-->
@@ -13,8 +12,7 @@
 		<meta name="description" content="Austin garden design small business" />
 		<meta name="keywords" content="Austin garden design small business" />
 		<link rel="shortcut icon" href="public/img/dragonfly.png" type="image/png" />
-		<link rel="stylesheet" href="src/css/styles.css" type="text/css" />
-		<link rel="stylesheet" href="src/css/styles.css" type="text/css" />
+		<link rel="stylesheet" href="public/css/styles.min.css" type="text/css" />
 		<!-- google analytics
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -39,6 +37,6 @@
 			include './php/contact.php';
 			include './php/footer.php';
 		?>
-		<script type="text/javascript" src="/src/js/index.js"></script>
+		<script type="text/javascript" src="public/js/index.min.js"></script>
 	</body>
 </html>
