@@ -9,25 +9,26 @@
 	require '../config/recipient.php';
 
 //smtp server
-	require '../config/host.php';
-	require '../config/user.php';
-	require '../config/pass.php';
+	// require '../config/host.php';
+	// require '../config/user.php';
+	// require '../config/pass.php';
 
 //load classes from requires
 	use ReCaptcha\ReCaptcha;
 	use Nette\Mail\Message;
-	use Nette\Mail\SmtpMailer;
+	//use Nette\Mail\SmtpMailer;
+	use Nette\Mail\SendmailMailer;
 
+//echo 'send-mail fired';
 //error reporting
-	// error_reporting(-1);
-	// ini_set('display_errors', 'On');
-	// set_error_handler("var_dump");
-
+	error_reporting(-1);
+	ini_set('display_errors', 'On');
+	set_error_handler("var_dump");
 //parse object from front end
 	$json = file_get_contents('php://input');
 	$json_decode = json_decode($json, true);
 	// $json_encode = json_encode($json_decode);
-	// echo $json_encode;
+	//echo $json_encode;
 
 //if recaptcha sent, verify
 	if($json_decode["g-recaptcha-response"]) {
@@ -48,14 +49,15 @@
 					if(isset($json_decode['tel'])) {
 						$message .= PHP_EOL . PHP_EOL . $json_decode['name'] . "'s phone number is " . $json_decode['tel'];
 					}
-					$transport = new SmtpMailer([
-						'host' => $host,
-						'username' => $user,
-						'password' => $pass,
-						'secure' => 'ssl',
-					]);
+					// $transport = new SmtpMailer([
+					// 	'host' => $host,
+					// 	'username' => $user,
+					// 	'password' => $pass,
+					// 	'secure' => 'ssl',
+					// ]);
+					$transport = new SendmailMailer;
 					$mail = new Message;
-					$mail->setFrom($user);
+					$mail->setFrom($json_decode['email'], $json_decode['name']);
 					$mail->addTo( $recipient );
 					$mail->setSubject("New mail from simplywildgardens.com: " . $json_decode['subject']);
 					$mail->setBody( $message );
@@ -70,3 +72,4 @@
 		//if captcha not sent, return fail
 		exit("captcha fail");
 	}
+?>
