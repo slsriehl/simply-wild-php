@@ -7,7 +7,7 @@
 			<span class="section__span--tagline" id="replaceOnSubmit">
 				Give us a shout!&nbsp;
 			</span>
-			<span id="hideOnSubmit">You can email us using the form below </span>or call or text us at <a href="tel:+15129707776" class="section__span--tagline">512&nbsp;970&nbsp;7776</a>.  You can also like us on
+			<span id="hideOnSubmit">You can email us using the form below. </span>Call or text us at <a href="tel:+15129707776" class="section__span--tagline">512&nbsp;970&nbsp;7776</a>.  You can also like us on
 			<a href="http://www.facebook.com/SimplyWildGardens" class="section__span--tagline">
 				Facebook
 			</a>
@@ -15,12 +15,12 @@
 		</p>
 		<form class="contact__form" id="emailSuzy">
 				<div class="contact__float-label">
-					<input class="contact__input" name="name" type="text"/>
+					<input class="contact__input" name="name" type="text" required/>
 					<label for="name">Name</label>
 				</div>
 
 				<div class="contact__float-label">
-					<input class="contact__input" name="email" type="email" />
+					<input class="contact__input" name="email" type="email" required/>
 					<label for="email">Email</label>
 				</div>
 
@@ -30,12 +30,12 @@
 			</div>
 
 			<div class="contact__float-label">
-				<input class="contact__input" name="subject" type="text" />
+				<input class="contact__input" name="subject" type="text" required/>
 				<label for="subject">Subject</label>
 			</div>
 
 			<div class="contact__float-label">
-				<textarea class="contact__input" name="message"></textarea>
+				<textarea class="contact__input" name="message" required></textarea>
 				<label for="message">Message</label>
 			</div>
 

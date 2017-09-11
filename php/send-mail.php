@@ -1,39 +1,72 @@
 <?php
-	require '../config/secret.php';
+//requires autoloaders
 	require '../vendor/autoload.php';
-	// need zetacomponents/main, google/recaptcha, and recaptcha-lib/recatpcha
-	var_dump($_POST);
-	if(!$_POST['name'] || !$_POST['email'] || !$_POST['subject'] || !$_POST['message']) {
-		echo 'All fields besides phone number are required.  Please try again or ';
-		return;
-	}
+	require '../vendor/recaptcha-lib/recaptcha/lib/ReCaptcha/CaptchaAutoloader.php';
 
-	// if($_POST["g-recaptcha-response"]) {
-	// 	$reCaptcha = new ReCaptcha($secret);
-	// 	//$reCaptcha->setPrivateKey();
-	// 	$trueCaptcha = $reCaptcha->verify(
-	// 		$_POST["g-recaptcha-response"]
-	// 	);
-	// 	if(!$trueCaptcha) {
-	// 		echo "Sorry, we couldn't send your message.  Please check the captcha ";
-	// 		return;
-	// 	} else {
+//requires for recatpcha
+	require '../config/secret.php';
+//recipient email
+	require '../config/recipient.php';
+
+//smtp server
+	require '../config/host.php';
+	require '../config/user.php';
+	require '../config/pass.php';
+
+//load classes from requires
+	use ReCaptcha\ReCaptcha;
+	use Nette\Mail\Message;
+	use Nette\Mail\SmtpMailer;
+
+//error reporting
+	// error_reporting(-1);
+	// ini_set('display_errors', 'On');
+	// set_error_handler("var_dump");
+
+//parse object from front end
+	$json = file_get_contents('php://input');
+	$json_decode = json_decode($json, true);
+	// $json_encode = json_encode($json_decode);
+	// echo $json_encode;
+
+//if recaptcha sent, verify
+	if($json_decode["g-recaptcha-response"]) {
+		$reCaptcha = new ReCaptcha($secret);
+		//$reCaptcha->setPrivateKey();
+		$trueCaptcha = $reCaptcha->verify(
+			$json_decode["g-recaptcha-response"]
+		);
+		if(!$trueCaptcha) {
+			//if the captcha fails, return fail
+			exit("captcha fail");
+		} else {
+			//if the captcha succeeds, try to send the mail
 			try {
-					$time = new DateTime();
-					$formatted_time = $time->format('Y-m-d H:i:s');
-					$message = 'New message from' . $_POST['name'] . PHP_EOL . PHP_EOL . $_POST['message'] . PHP_EOL . PHP_EOL . 'Sent on ' . $time . ' at ' . $formatted_time . ' from simplywildgardens.com.';
-					$transport = new ezcMailTransportSmtp();
-					$mail = new ezcMail();
-					$mail->from = new ezcMailAddress( $_POST['email'], $_POST['name'] );
-					$mail->addTo( new ezcMailAddress( "sarah@riehlhelp.com" ) );
-					$mail->subject = $_POST['subject'];
-					$mail->body = new ezcMailText( $message );
+					$time = date('Y-m-d H:i:s');
+					//$formatted_time = $time->format;
+					$message = "New message from " . $json_decode['name'] . " at " . $json_decode['email'] . PHP_EOL . PHP_EOL . $json_decode['message'] . PHP_EOL . PHP_EOL . "Sent " . $time . " from simplywildgardens.com.";
+					if(isset($json_decode['tel'])) {
+						$message .= PHP_EOL . PHP_EOL . $json_decode['name'] . "'s phone number is " . $json_decode['tel'];
+					}
+					$transport = new SmtpMailer([
+						'host' => $host,
+						'username' => $user,
+						'password' => $pass,
+						'secure' => 'ssl',
+					]);
+					$mail = new Message;
+					$mail->setFrom($user);
+					$mail->addTo( $recipient );
+					$mail->setSubject("New mail from simplywildgardens.com: " . $json_decode['subject']);
+					$mail->setBody( $message );
 					$transport->send( $mail );
-					echo 'Your message was successfully sent!';
+					exit('success sending');
 			} catch ( Exception $e ) {
-					echo "Sorry, we couldn't send your message.  Please try again later ";
+				//if mail not sent, return fail
+					exit("fail to send");
 			}
-	// 	}
-	// } else {
-	// 	echo "Sorry, we couldn't send your message.  Please check the captcha ";
-	// }
+		}
+	} else {
+		//if captcha not sent, return fail
+		exit("captcha fail");
+	}

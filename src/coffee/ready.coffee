@@ -3,7 +3,6 @@ isReady document, () ->
 	# pick out elements to use in the onsubmit listener
 	emailForm = document.getElementById 'emailSuzy'
 	hideOnSubmitSpan = document.getElementById 'hideOnSubmit'
-	showOnSubmitSpan = document.getElementById 'showOnSubmit'
 	replaceOnSubmitSpan = document.getElementById 'replaceOnSubmit'
 
 	# existence check and event listener attachment/detachment for the onsubmit function, remove and then add
@@ -51,10 +50,7 @@ isReady document, () ->
 	footerDate = () ->
 		thisDate = new Date().getFullYear()
 		console.log thisDate
-		if thisDate == 2017
-			return '2017&nbsp;'
-		else
-			return "2017-#{thisDate}&nbsp;"
+		return "2014-#{thisDate}&nbsp;"
 
 	footerCopyright = document.getElementById 'footerCopy'
 	theYear = document.createElement 'span'

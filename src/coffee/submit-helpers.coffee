@@ -9,18 +9,27 @@ submitForm = (event, el, hideMe, replaceMe) ->
 	#call make request method promise
 	request 'POST', 'php/send-mail.php', data
 	.then (result) ->
-		renderMessage el, hideMe, replaceMe, result
+		console.log result
+		if result == 'success sending'
+			message = 'Your message was successfully sent. '
+		else if result == 'captcha fail'
+			message = "Please check the captcha and try again. "
+		else
+			message = "Sorry, we couldn't send your message.  Try again later. "
+		renderMessage el, hideMe, replaceMe, message
 	.catch (error) ->
-		message = "Sorry, we couldn't send your message.  Please call or try again later."
+		message = "Sorry, we couldn't send your message.  Try again later. "
 		renderMessage el, hideMe, replaceMe, message
 
 # render a message
 renderMessage = (el, hideMe, replaceMe, message) ->
-	if message == 'Your message was successfully sent!'
+	replaceMe.innerHTML = message
+	hideMe.style.display = 'none'
+	if message == 'Your message was successfully sent. '
+		console.log 'success message'
 		el.style.display = 'none'
-		hideMe.style.display = 'none'
 	else
+		console.log 'failed message'
 		replaceMe.style.color = '#C70039'
-	replaceMe.innerHtml = message
 	resetJump()
 	window.location.hash = "\u0023contact"
