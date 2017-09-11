@@ -2437,6 +2437,7 @@ table {
   overflow: visible;
   clip: auto; }
 
+/* mixins based on based on https://codepen.io/tonystar/pen/JRLaKw by Anton Staroverov. */
 html, body {
   height: 100%; }
 
@@ -2448,8 +2449,6 @@ html {
 
 body {
   width: 100%;
-  display: flex;
-  flex-direction: column;
   font-family: "FuturaBT-Book";
   font-size: 20px;
   line-height: 1.5;
@@ -2459,37 +2458,50 @@ body {
 /* handle logo img as a background */
 .logo--img {
   width: 300px;
-  height: 60px;
-  padding-left: 300px;
-  /*width of the image*/
+  padding-top: 16.5%;
+  /*image aspect ratio*/
   margin: 1rem;
   background: url("/public/img/SW4.png") left top no-repeat;
-  background-size: 300px 60px; }
+  background-size: 100% 100%; }
   @media screen and (max-width: 1023px) and (min-width: 812px) {
     .logo--img {
-      width: 225px;
-      height: 45px;
-      padding-left: 225px;
-      /*width of the image*/
-      background-size: 225px 45px; } }
+      width: 225px; } }
   @media screen and (max-width: 811px) and (min-width: 628px) {
     .logo--img {
-      width: 600px;
-      height: 120px;
-      padding-left: 600px;
-      /*width of the image*/
-      background-size: 600px 120px; } }
+      width: 600px; } }
   @media screen and (max-width: 627px) and (min-width: 428px) {
     .logo--img {
-      width: 399.9px;
-      height: 79.98px;
-      padding-left: 399.9px;
-      /*width of the image*/
-      background-size: 399.9px 79.98px; } }
+      width: 399.9px; } }
+
+.section--img {
+  width: 100%;
+  padding-top: 31.5%; }
+
+#about--img {
+  padding-top: 29.6%;
+  background: url("/public/img/jumbo/catfountain.jpg") left top no-repeat;
+  background-size: 100% 100%; }
+
+#services--img {
+  background: url("/public/img/jumbo/pinkflowers.jpg") left top no-repeat;
+  background-size: 100% 100%; }
+
+#comments--img {
+  margin-top: 2rem;
+  background: url("/public/img/jumbo/birds.jpg") left top no-repeat;
+  background-size: 100% 100%; }
+
+#contact--img {
+  background: url("/public/img/jumbo/lizard.jpg") left top no-repeat;
+  background-size: 100% 100%; }
+
+#suzi--img {
+  width: 200px;
+  padding-top: 200px;
+  background: url("/public/img/suzi.jpg") left top no-repeat;
+  background-size: 100% 100%; }
 
 .header {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   background-color: unset; }
 
@@ -2500,9 +2512,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0.75rem; }
+  padding: 0.75rem;
+  font-size: 17px; }
+  .header__services span {
+    position: relative;
+    top: 3px; }
   .header__services .header__services--bullet {
     display: none; }
+  @media screen and (min-width: 474px) {
+    .header__services {
+      font-size: unset; } }
   @media screen and (min-width: 1043px) {
     .header__services {
       display: flex;
@@ -2526,7 +2545,8 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    margin: 1rem; }
   @media screen and (min-width: 812px) {
     .header__nav {
       display: flex;
@@ -2534,7 +2554,6 @@ body {
       justify-content: space-between;
       align-items: center; }
       .header__nav .header__logo {
-        margin: 1rem;
         order: -1; } }
 
 .header__menu {
@@ -2557,30 +2576,68 @@ body {
       padding: unset; } }
   @media screen and (max-width: 1023px) and (min-width: 812px) {
     .header__menu {
-      height: 100px; } }
+      height: 92.125px; } }
   @media screen and (min-width: 1024px) {
     .header__menu {
-      height: 115px; } }
+      height: 104.5px; } }
+
+#menuOverlay {
+  position: fixed;
+  visibility: hidden;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto; }
+  @media screen and (min-width: 812px) {
+    #menuOverlay {
+      display: none; } }
 
 .header__menu__hmm {
-  display: none; }
+  position: fixed;
+  visibility: hidden;
+  left: 2rem;
+  top: 0;
+  height: 100vh;
+  width: fit-content;
+  overflow: scroll;
+  transition: max-height 0.4s ease 0s;
+  z-index: -1;
+  list-style-type: none;
+  background-color: #b3bf80;
+  padding: 1.75rem 0;
+  font-size: 30px; }
   .header__menu__hmm .menu--item {
-    padding: 0.75rem 0.5rem 0.75rem 0.5rem; }
-    .header__menu__hmm .menu--item a, .header__menu__hmm .menu--item a:hover, .header__menu__hmm .menu--item a:visited, .header__menu__hmm .menu--item a:active {
-      text-decoration: none;
-      width: 100%; }
-      .header__menu__hmm .menu--item a span, .header__menu__hmm .menu--item a:hover span, .header__menu__hmm .menu--item a:visited span, .header__menu__hmm .menu--item a:active span {
-        line-height: 1;
-        color: #000; }
-        @media screen and (max-width: 871px) and (min-width: 812px) {
-          .header__menu__hmm .menu--item a span, .header__menu__hmm .menu--item a:hover span, .header__menu__hmm .menu--item a:visited span, .header__menu__hmm .menu--item a:active span {
-            font-size: 17px; } }
+    padding: 0.75rem 2.5rem; }
+    .header__menu__hmm .menu--item:active {
+      background-color: #b7a38b; }
+    .header__menu__hmm .menu--item span {
+      position: relative;
+      top: 3px;
+      line-height: 1;
+      color: #000; }
+      @media screen and (max-width: 871px) and (min-width: 812px) {
+        .header__menu__hmm .menu--item span {
+          font-size: 17px; } }
   @media screen and (min-width: 812px) {
     .header__menu__hmm {
-      list-style-type: none;
-      display: block; }
+      position: relative;
+      left: unset;
+      overflow: unset;
+      height: unset;
+      width: unset;
+      z-index: 10;
+      padding: 0;
+      visibility: visible;
+      font-size: unset; }
       .header__menu__hmm .menu--item {
-        display: inline-block; }
+        display: inline-block;
+        padding: 0.75rem 0.5rem; }
+        .header__menu__hmm .menu--item span {
+          position: unset;
+          top: unset; }
       .header__menu__hmm .menu--item:hover {
         background-color: #b7a38b; } }
 
@@ -2620,3 +2677,227 @@ body {
   font-size: 30px;
   line-height: 1;
   text-decoration: none; }
+
+.section {
+  width: 100%; }
+
+.section__jumbo {
+  width: 100%; }
+
+.section__text {
+  width: 100%;
+  padding: 2rem; }
+  @media screen and (min-width: 628px) {
+    .section__text {
+      padding: 2rem 4rem;
+      display: block; } }
+
+.section__side__img {
+  margin: auto;
+  margin-bottom: 1.5rem; }
+  @media screen and (min-width: 812px) {
+    .section__side__img {
+      display: block;
+      float: left;
+      margin: 0 2rem 1rem 0; } }
+  @media screen and (max-width: 1458px) and (min-width: 1291px) {
+    .section__side__img {
+      margin-bottom: 3rem; } }
+  @media screen and (max-width: 1291px) and (min-width: 1174px) {
+    .section__side__img {
+      margin-bottom: 6rem; } }
+  @media screen and (max-width: 1174px) and (min-width: 1114px) {
+    .section__side__img {
+      margin-bottom: 8rem; } }
+  @media screen and (max-width: 1114px) and (min-width: 1061px) {
+    .section__side__img {
+      margin-bottom: 10rem; } }
+
+.section__p {
+  line-height: 2;
+  padding-bottom: 1rem; }
+
+.section__span--tagline {
+  font-family: "FuturaBT-Bold";
+  color: #b7a38b; }
+
+a.section__span--tagline {
+  text-decoration: none; }
+  a.section__span--tagline:hover, a.section__span--tagline:active {
+    text-decoration: underline;
+    color: #b3bf80; }
+
+.section--bullets {
+  list-style-image: url("/public/img/dragonfly3.png");
+  margin-left: 3rem;
+  margin-bottom: 2rem; }
+  .section--bullets li {
+    line-height: 2; }
+
+.garden__image__row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(183, 163, 139, 0.5);
+  padding: 1rem; }
+  @media screen and (min-width: 1280px) {
+    .garden__image__row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      padding: 2rem 0; } }
+
+#garden--text {
+  display: none; }
+  @media screen and (min-width: 1280px) {
+    #garden--text {
+      width: 100%;
+      display: block;
+      text-align: center; } }
+
+.garden__image {
+  height: 480px;
+  width: 360px;
+  padding-left: 360px;
+  margin: 1rem; }
+
+#garden__image--1 {
+  background: url("/public/img/gardens/1.jpg") left top no-repeat;
+  background-size: 100% 100%; }
+
+#garden__image--2 {
+  width: 480px;
+  padding-left: 480px;
+  background: url("/public/img/gardens/2.jpg") left top no-repeat;
+  background-size: 100% 100%; }
+
+#garden__image--3 {
+  background: url("/public/img/gardens/3.jpg") left top no-repeat;
+  background-size: 100% 100%; }
+
+#garden__image--4 {
+  background: url("/public/img/gardens/4.jpg") left top no-repeat;
+  background-size: 100% 100%; }
+
+#garden__image--5 {
+  width: 480px;
+  padding-left: 480px;
+  background: url("/public/img/gardens/5.jpg") left top no-repeat;
+  background-size: 100% 100%; }
+
+#garden__image--6 {
+  background: url("/public/img/gardens/6.jpg") left top no-repeat;
+  background-size: 100% 100%; }
+
+@media screen and (max-width: 1279px) {
+  #garden__image--3 {
+    margin-bottom: 0; }
+  #garden__image--4 {
+    margin-top: 0; } }
+
+/* based on https://codepen.io/tonystar/pen/JRLaKw by Anton Staroverov.  See mixins in mixin file */
+/* Default styling
+ * https://github.com/tonystar/float-label-css/blob/master/scss/float-label.scss
+ */
+#showOnSubmit {
+  display: none; }
+
+.contact__float-label {
+  display: block;
+  position: relative; }
+  .contact__float-label label {
+    position: relative;
+    z-index: 50;
+    left: 1rem;
+    top: -2.75rem;
+    cursor: text;
+    transition: all .2s; }
+  .contact__float-label textarea.contact__input {
+    height: 30rem; }
+    .contact__float-label textarea.contact__input + label {
+      top: -30rem; }
+    .contact__float-label textarea.contact__input.contact__input--filled + label, .contact__float-label textarea.contact__input:focus + label {
+      top: -31.5rem; }
+  .contact__float-label .contact__input {
+    font-size: inherit;
+    width: 100%;
+    padding: 1rem;
+    color: #000;
+    background-color: rgba(183, 163, 139, 0.5);
+    border: 3px solid #b7a38b;
+    border-radius: 5px; }
+    .contact__float-label .contact__input::placeholder {
+      opacity: 1;
+      transition: all .2s; }
+    .contact__float-label .contact__input:placeholder-shown:not(:focus)::placeholder {
+      opacity: 0; }
+    .contact__float-label .contact__input.contact__input--filled, .contact__float-label .contact__input:focus {
+      border-color: rgba(179, 191, 128, 0.5);
+      background-color: unset; }
+      .contact__float-label .contact__input.contact__input--filled + label, .contact__float-label .contact__input:focus + label {
+        color: #b3bf80;
+        top: -4.75rem;
+        background-color: #fff;
+        padding: 0 0.25rem; }
+    .contact__float-label .contact__input:placeholder-shown:not(:focus) + * {
+      font-size: 150%;
+      opacity: .5;
+      top: 0.25rem; }
+
+.contact__form {
+  padding: 2rem 0 0 0;
+  width: 100%;
+  height: fit-content; }
+  @media screen and (min-width: 768px) and (max-width: 1210px) {
+    .contact__form {
+      width: 60%; } }
+  @media screen and (min-width: 1211px) {
+    .contact__form {
+      width: 40%; } }
+
+.section__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.contact--captcha {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem; }
+
+.contact__button__container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center; }
+
+.contact__button {
+  font-size: unset;
+  background: #fff;
+  color: #b3bf80;
+  border: 5px solid #b3bf80;
+  border-radius: 5px;
+  padding: 1rem; }
+
+.footer__container {
+  background-color: #000;
+  width: 100%;
+  padding: 1rem 1.5rem; }
+
+.footer--span {
+  color: #fff; }
+  .footer--span a {
+    font-family: "FuturaBT-Bold";
+    color: #fff;
+    text-decoration: none; }
+    .footer--span a:hover, .footer--span a:active {
+      text-decoration: underline;
+      color: #fff; }
+    .footer--span a:visited {
+      color: #fff; }
