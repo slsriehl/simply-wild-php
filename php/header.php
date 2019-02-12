@@ -43,7 +43,7 @@
 		<!-- /.header__menu -->
 		</div>
 		<div class="header__logo">
-			<div class="logo--img">
+			<div id="logo--img">
 			</div>
 			<!-- /.header__logo -->
 		</div>
