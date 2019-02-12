@@ -25,24 +25,24 @@
  * © 2015 MyFonts Inc
 */
 
+
 /* FuturaBT-Light */
 @font-face {
 	font-family: 'FuturaBT-Light';
-	src: url('/public/webfonts/futura/2F3069_0_0.eot');
-	src: url('/public/webfonts/futura/2F3069_0_0.eot?#iefix') format('embedded-opentype'),url('/public/webfonts/futura/2F3069_0_0.woff2') format('woff2'),url('/public/webfonts/futura/2F3069_0_0.woff') format('woff'),url('/public/webfonts/futura/2F3069_0_0.ttf') format('truetype');
+	src: url('/public/fonts/futura/38BD5D_0_0.eot');
+	src: url('/public/fonts/futura/38BD5D_0_0.eot?#iefix') format('embedded-opentype'), url('/public/fonts/futura/38BD5D_0_0.woff2') format('woff2'), url('/public/fonts/futura/38BD5D_0_0.woff') format('woff'), url('/public/fonts/futura/38BD5D_0_0.ttf') format('truetype');
 }
 
 /* FuturaBT-Book */
 @font-face {
 	font-family: 'FuturaBT-Book';
-	src: url('/public/webfonts/futura/2F3069_1_0.eot');
-	src: url('/public/webfonts/futura/2F3069_1_0.eot?#iefix') format('embedded-opentype'),url('/public/webfonts/futura/2F3069_1_0.woff2') format('woff2'),url('webfonts/2F3069_1_0.woff') format('woff'),url('/public/webfonts/futura/2F3069_1_0.ttf') format('truetype');}
+	src: url('/public/fonts/futura/38BD5D_1_0.eot');
+	src: url('/public/fonts/futura/38BD5D_1_0.eot?#iefix') format('/public/embedded-opentype'), url('/public/fonts/futura/38BD5D_1_0.woff2') format('woff2'), url('/public/fonts/futura/38BD5D_1_0.woff') format('woff'), url('/public/fonts/futura/38BD5D_1_0.ttf') format('truetype');
+}
 
 /* FuturaBT-Bold */
 @font-face {
-	font-family: 'FuturaBT-Bold';
-	src: url('/public/webfonts/futura/2F3069_2_0.eot');
-	src: url('/public/webfonts/futura/2F3069_2_0.eot?#iefix') format('embedded-opentype'),url('/public/webfonts/futura/2F3069_2_0.woff2') format('woff2'),url('/public/webfonts/futura/2F3069_2_0.woff') format('woff'),url('/public/webfonts/futura/2F3069_2_0.ttf') format('truetype');
+	font-family: 'FuturaBTWXX-Bold';src: url('/public/fonts/futura/38BD5D_2_0.eot');src: url('/public/fonts/futura/38BD5D_2_0.eot?#iefix') format('embedded-opentype'), url('/public/fonts/futura/38BD5D_2_0.woff2') format('woff2'), url('/public/fonts/futura/38BD5D_2_0.woff') format('woff'), rl('/public/fonts/futura/38BD5D_2_0.ttf') format('truetype');
 }
 
 @import '../font-awesome/_font-awesome';

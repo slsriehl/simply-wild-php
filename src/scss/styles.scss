@@ -1,22 +1,22 @@
 
-@import '_reset';
+@import 'reset';
 
-@import './variables/_fonts';
-@import './variables/_colors';
-@import './variables/_dimensions';
+@import './variables/fonts';
+@import './variables/colors';
+@import './variables/dimensions';
 
-@import './mixins/_block-layouts';
-@import './mixins/_mail';
+@import './mixins/block-layouts';
+@import './mixins/mail';
 
-@import './partials/_body';
+@import './partials/body';
 
-@import './partials/_images';
+@import './partials/images';
 
-@import './partials/_header';
-@import './partials/_section';
-@import './partials/_gardens';
-@import './partials/_mail';
-@import './partials/_footer';
+@import './partials/header';
+@import './partials/section';
+@import './partials/gardens';
+@import './partials/mail';
+@import './partials/footer';
 
 
 

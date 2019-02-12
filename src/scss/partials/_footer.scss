@@ -7,7 +7,7 @@
 .footer--span {
 	color: $light;
 	a {
-		font-family: $font-bold;
+		font-family: $font-bold, Helvetica, Arial, sans-serif;
 		color: $light;
 		text-decoration: none;
 		&:hover, &:active {
