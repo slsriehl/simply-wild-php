@@ -2,7 +2,7 @@
  * Simply Wild Gardens - 1.5 - simplywildgardens.com
 
  * MIT License
- * Copyright 2014-2017 Sarah Schieffer Riehl with Suzi Sands
+ * Copyright 2014-2019 Sarah Schieffer Riehl with Suzi Sands
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights

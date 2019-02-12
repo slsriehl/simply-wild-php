@@ -2,7 +2,7 @@
  * Simply Wild Gardens - 1.5 - simplywildgardens.com
 
  * MIT License
- * Copyright 2014-2017 Sarah Schieffer Riehl with Suzi Sands
+ * Copyright 2014-2019 Sarah Schieffer Riehl with Suzi Sands
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -93,20 +93,20 @@ table {
 /* FuturaBT-Light */
 @font-face {
   font-family: 'FuturaBT-Light';
-  src: url("/public/webfonts/futura/2F3069_0_0.eot");
-  src: url("/public/webfonts/futura/2F3069_0_0.eot?#iefix") format("embedded-opentype"), url("/public/webfonts/futura/2F3069_0_0.woff2") format("woff2"), url("/public/webfonts/futura/2F3069_0_0.woff") format("woff"), url("/public/webfonts/futura/2F3069_0_0.ttf") format("truetype"); }
+  src: url("/public/fonts/futura/38BD5D_0_0.eot");
+  src: url("/public/fonts/futura/38BD5D_0_0.eot?#iefix") format("embedded-opentype"), url("/public/fonts/futura/38BD5D_0_0.woff2") format("woff2"), url("/public/fonts/futura/38BD5D_0_0.woff") format("woff"), url("/public/fonts/futura/38BD5D_0_0.ttf") format("truetype"); }
 
 /* FuturaBT-Book */
 @font-face {
   font-family: 'FuturaBT-Book';
-  src: url("/public/webfonts/futura/2F3069_1_0.eot");
-  src: url("/public/webfonts/futura/2F3069_1_0.eot?#iefix") format("embedded-opentype"), url("/public/webfonts/futura/2F3069_1_0.woff2") format("woff2"), url("webfonts/2F3069_1_0.woff") format("woff"), url("/public/webfonts/futura/2F3069_1_0.ttf") format("truetype"); }
+  src: url("/public/fonts/futura/38BD5D_1_0.eot");
+  src: url("/public/fonts/futura/38BD5D_1_0.eot?#iefix") format("/public/embedded-opentype"), url("/public/fonts/futura/38BD5D_1_0.woff2") format("woff2"), url("/public/fonts/futura/38BD5D_1_0.woff") format("woff"), url("/public/fonts/futura/38BD5D_1_0.ttf") format("truetype"); }
 
 /* FuturaBT-Bold */
 @font-face {
-  font-family: 'FuturaBT-Bold';
-  src: url("/public/webfonts/futura/2F3069_2_0.eot");
-  src: url("/public/webfonts/futura/2F3069_2_0.eot?#iefix") format("embedded-opentype"), url("/public/webfonts/futura/2F3069_2_0.woff2") format("woff2"), url("/public/webfonts/futura/2F3069_2_0.woff") format("woff"), url("/public/webfonts/futura/2F3069_2_0.ttf") format("truetype"); }
+  font-family: 'FuturaBTWXX-Bold';
+  src: url("/public/fonts/futura/38BD5D_2_0.eot");
+  src: url("/public/fonts/futura/38BD5D_2_0.eot?#iefix") format("embedded-opentype"), url("/public/fonts/futura/38BD5D_2_0.woff2") format("woff2"), url("/public/fonts/futura/38BD5D_2_0.woff") format("woff"), rl("/public/fonts/futura/38BD5D_2_0.ttf") format("truetype"); }
 
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -116,8 +116,8 @@ table {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("/public/webfonts/font-awesome/fontawesome-webfont.eot?v=4.7.0");
-  src: url("/public/webfonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("/public/webfonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("/public/webfonts/font-awesome/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("/public/webfonts/font-awesome/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("/public/webfonts/font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  src: url("/public/fonts/font-awesome/fontawesome-webfont.eot?v=4.7.0");
+  src: url("/public/fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("/public/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("/public/fonts/font-awesome/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("/public/fonts/font-awesome/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("/public/fonts/font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -2449,14 +2449,14 @@ html {
 
 body {
   width: 100%;
-  font-family: "FuturaBT-Book";
+  font-family: "FuturaBT-Book", Helvetica, Arial, sans-serif;
   font-size: 20px;
   line-height: 1.5;
   background-color: #fff;
   color: #000; }
 
 /* handle logo img as a background */
-.logo--img {
+#logo--img {
   width: 300px;
   padding-top: 16.5%;
   /*image aspect ratio*/
@@ -2464,13 +2464,13 @@ body {
   background: url("/public/img/SW4.png") left top no-repeat;
   background-size: 100% 100%; }
   @media screen and (max-width: 1023px) and (min-width: 812px) {
-    .logo--img {
+    #logo--img {
       width: 225px; } }
   @media screen and (max-width: 811px) and (min-width: 628px) {
-    .logo--img {
+    #logo--img {
       width: 600px; } }
   @media screen and (max-width: 627px) and (min-width: 428px) {
-    .logo--img {
+    #logo--img {
       width: 399.9px; } }
 
 .section--img {
@@ -2718,7 +2718,7 @@ body {
   padding-bottom: 1rem; }
 
 .section__span--tagline {
-  font-family: "FuturaBT-Bold";
+  font-family: "FuturaBT-Bold", Helvetica, Arial, sans-serif;
   color: #b7a38b; }
 
 a.section__span--tagline {
@@ -2893,7 +2893,7 @@ a.section__span--tagline {
 .footer--span {
   color: #fff; }
   .footer--span a {
-    font-family: "FuturaBT-Bold";
+    font-family: "FuturaBT-Bold", Helvetica, Arial, sans-serif;
     color: #fff;
     text-decoration: none; }
     .footer--span a:hover, .footer--span a:active {
