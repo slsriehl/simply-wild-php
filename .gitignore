@@ -1,6 +1,8 @@
 .DS_Store
 vendor
 src/img
-public/webfonts
+public/fonts
 node_modules
 config
+
+npm-debug\.log
